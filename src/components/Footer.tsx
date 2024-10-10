@@ -1,106 +1,55 @@
-import { scrollToTop } from '../Utils/functions';
+import { scrollToTop } from '@/Utils/functions';
+import footerBg from '@/assets/footer-bg.png';
+import Image from 'next/image';
+import logo from '@/assets/logo.png';
+import Headding from './Headding';
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-16">
+    <footer
+      className="text-white py-16 bg-no-repeat bg-cover bg-center"
+      style={{ backgroundImage: `url(${footerBg.src})` }}
+    >
       <div className="container mx-auto px-4">
         {/* Newsletter Section */}
         <section className="mb-12 md:flex justify-between gap-2">
-          <div>
-            <h2 className="text-2xl font-bold mb-2">Join our newsletter</h2>
-            <p className="mb-4">
-              Stay updated with our latest offers and news.
-            </p>
-          </div>
-          <div>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-grow mr-4 px-4 py-2 border border-gray-300 rounded"
-              />
-              <button className="px-6 py-2 bg-black text-white rounded hover:bg-blue-700 transition duration-300">
-                Subscribe
-              </button>
-            </div>
-            <p className="text-sm text-gray-500 mt-2">
-              By subscribing you agree to our Privacy Policy.{' '}
-              <a href="#" className="underline">
-                Privacy Policy
-              </a>
-            </p>
-          </div>
+          <Headding
+            light
+            headerText="Simplify Your Sourcing Process with Us"
+            subText="Whether you're looking to buy goods from Nigeria, source from international suppliers, or need financial support to make purchases, we’ve got you covered:"
+            className="max-w-[60.375rem] mx-auto text-center"
+            headTextClass="lg:text-[44px]"
+          />
         </section>
 
         {/* Main Footer Content */}
-        <div className="flex flex-wrap -mx-4">
+        <div className="flex flex-wrap -mx-4 pt-8 border-t border-white/[12%]">
           {/* Logo */}
-          <div className="w-full md:w-1/6 px-4 mb-8 md:mb-0">
-            <div className="text-2xl font-bold italic" onClick={scrollToTop}>
-              Logo
+          <div className="max-md:hidden w-full md:w-1/6 px-4 mb-8 md:mb-0">
+            <div
+              className="h-[2.4375rem] overflow-hidden cursor-pointer"
+              onClick={scrollToTop}
+            >
+              <Image
+                src={logo}
+                alt="Obana.Africa"
+                className="object-cover h-full"
+              />{' '}
             </div>
           </div>
 
           {/* Footer Columns */}
-          {[
-            {
-              title: 'Column One',
-              links: [
-                'About Us',
-                'Our Services',
-                'Products List',
-                'Customer Support',
-                'FAQs',
-              ],
-            },
-            {
-              title: 'Column Two',
-              links: [
-                'Shipping Info',
-                'Return Policy',
-                'Blog Articles',
-                'Careers Page',
-                'Contact Us',
-              ],
-            },
-            {
-              title: 'Column Three',
-              links: [
-                'Link Eleven',
-                'Link Twelve',
-                'Link Thirteen',
-                'Link Fourteen',
-                'Link Fifteen',
-              ],
-            },
-            {
-              title: 'Column Four',
-              links: [
-                'Link Sixteen',
-                'Link Seventeen',
-                'Link Eighteen',
-                'Link Nineteen',
-                'Link Twenty',
-              ],
-            },
-            {
-              title: 'Column Five',
-              links: [
-                'Link Twenty One',
-                'Link Twenty Two',
-                'Link Twenty Three',
-                'Link Twenty Four',
-                'Link Twenty Five',
-              ],
-            },
-          ].map((column, index) => (
-            <div key={index} className="w-full md:w-1/6 px-4 mb-8 md:mb-0">
+          {footerLinnks.map((column, index) => (
+            <div key={index} className="w-1/2 md:w-1/5 px-4 mb-8 md:mb-0">
               <h3 className="font-bold mb-4">{column.title}</h3>
               <ul>
                 {column.links.map((link, linkIndex) => (
                   <li key={linkIndex} className="mb-2">
-                    <a href="#" className="text-gray-600 hover:text-gray-900">
-                      {link}
+                    <a
+                      href={link.url}
+                      className="text-obGray-300 hover:text-obGray-400"
+                    >
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -110,21 +59,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <div className="flex flex-wrap items-center justify-between">
-            <div className="w-full md:w-auto mb-4 md:mb-0">
-              <span className="text-gray-600">
-                © 2024 Relume. All rights reserved.
+        <div className="mt-12 ">
+          <div className="flex flex-col gap-2.5 items-center">
+            <div className="w-full md:w-auto mb-4 md:mb-0 text-center">
+              <span className="text-obGray-400">
+                © 2024 Obana Limited. All rights reserved.
               </span>
-              <a href="#" className="text-gray-600 hover:text-gray-900 ml-4">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900 ml-4">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900 ml-4">
-                Cookies Settings
-              </a>
             </div>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-gray-600">
@@ -181,3 +121,36 @@ const Footer = () => {
 };
 
 export default Footer;
+const footerLinnks = [
+  {
+    title: 'For Businesses',
+    links: [
+      { label: 'Acquisition Campaign', url: '#' },
+      { label: 'Awareness Campaign', url: '#' },
+      { label: 'PM', url: '#' },
+      { label: 'Online Mall', url: '#' },
+    ],
+  },
+  {
+    title: 'For Influencers',
+    links: [
+      { label: 'Earn on Obana', url: '#' },
+      { label: 'Join PIM Program', url: '#' },
+    ],
+  },
+  {
+    title: 'Support',
+    links: [
+      { label: 'FAQ', url: '#' },
+      { label: 'Contact Us', url: '#' },
+    ],
+  },
+  {
+    title: 'Privacy',
+    links: [
+      { label: 'Privacy Policy', url: '#' },
+      { label: 'Influencer T&Cs', url: '#' },
+      { label: 'Business T&Cs', url: '#' },
+    ],
+  },
+];

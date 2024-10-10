@@ -1,26 +1,26 @@
+import Headding from './Headding';
+import HowToUseSteps from './HowToUseSteps';
+
 const HowToUse = () => {
   return (
-    <section className="py-20 bg-gray-100">
+    <section className="pt-10 sm:pt-20 pb-6 sm:pb-16 bg-obGray-100 w-[95%] md:w-[97%] mx-auto rounded-lg">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <h2 className="text-3xl font-bold mb-6">
-              Discover the Benefits of Our Services
-            </h2>
-            <p className="text-xl mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique.
-            </p>
-            <button className="bg-black text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">
-              Learn More
-            </button>
+        <div className="md:flex items-end">
+          <div className="flex-1">
+            <Headding
+              smallText="How to use the Platform"
+              headerText="Simplify Your Sourcing Process with Us"
+              className=""
+              size="lg"
+            />
           </div>
-          <div className="md:w-1/2 md:pl-12">
-            <div className="bg-gray-300 h-96 rounded-lg flex items-center justify-center">
-              <span className="text-gray-600 text-2xl">Image Placeholder</span>
-            </div>
-          </div>
+          <p className="text-lg md:text-[22px] flex-1">
+            Whether you're looking to buy goods from Nigeria, source from
+            international suppliers, or need financial support to make
+            purchases, we've got you covered:
+          </p>
         </div>
+        <HowToUseSteps />
       </div>
     </section>
   );

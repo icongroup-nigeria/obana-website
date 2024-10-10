@@ -1,4 +1,5 @@
 import Headding from './Headding';
+import ServicesSlider from './ServicesSlider';
 
 const Services = () => {
   return (
@@ -10,7 +11,8 @@ const Services = () => {
           subText="Experience seamless import and export solutions tailored to your needs with Obana Africa. Our platform ensures you get the best prices and reliable shipping every time."
           className="max-w-[738px] text-center mx-auto"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <ServicesSlider />
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[1, 2, 3, 4].map((item) => (
             <div key={item} className="bg-gray-100 p-6 rounded-lg">
               <div className="bg-gray-300 h-48 mb-4 rounded flex items-center justify-center">
@@ -25,7 +27,7 @@ const Services = () => {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
