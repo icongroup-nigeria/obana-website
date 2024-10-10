@@ -79,7 +79,7 @@ const Testimonials = () => {
           ))}
         </div>
         <div className="flex gap-2.5 justify-center items-center mt-8">
-          {[...Array(feedbacks.length)].map((item, i) => (
+          {[...Array(feedbacks.length)].map((_, i) => (
             <div
               onClick={() => scrollToSlide(i)}
               className={classNames(
@@ -88,7 +88,7 @@ const Testimonials = () => {
                   : 'w-[1.875rem] bg-obGray-400 h-1.5 rounded-full',
                 'rounded-full transition-all duration-300 ease-in-out hover:opacity-80'
               )}
-              key={item}
+              key={i}
             />
           ))}
         </div>

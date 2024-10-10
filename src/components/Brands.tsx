@@ -8,7 +8,7 @@ const Brands = () => {
       <Headding smallText="Get access to 4,000+ brands across globe" />
       <div className="flex items-center gap-4 overflow-auto no-scrollbar">
         {/* Brand Item */}
-        {[...Array(10)].map((i) => (
+        {[...Array(10)].map((_, i) => (
           <div className="min-h-[5.3125rem] min-w-[17.5rem]" key={i}>
             <Image src={brand} alt="brand" />
           </div>
