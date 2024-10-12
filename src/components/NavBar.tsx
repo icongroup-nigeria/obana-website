@@ -102,7 +102,7 @@ const NavBar = () => {
               Blog
             </a>
             <a
-              href="#"
+              href="https://forms.gle/2pyQZ4tM5fPNYWbK6"
               target="_blank"
               rel="noopener noreferrer"
               className="text-obGray-700 hover:text-primary flex items-center min-h-[3.1875rem]"
@@ -119,9 +119,17 @@ const NavBar = () => {
             </a>
           </div>
           <div className="max-md:flex-col flex md:items-center gap-2.5 md:gap-x-4">
-            <Button variant="ghost">Login</Button>
+            <Button variant="ghost">Join</Button>
 
-            <Button icon> Order Now</Button>
+            <Button
+              icon
+              onClick={() =>
+                window.open('https://shop.obana.africa/', '_blank')
+              }
+            >
+              {' '}
+              Order Now
+            </Button>
           </div>
         </div>
       </div>

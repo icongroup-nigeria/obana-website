@@ -7,9 +7,10 @@ type Props = {
   className?: string;
   children: ReactNode;
   icon?: boolean;
+  [x: string]: any;
 };
 
-const Button = ({ variant, className, children, icon }: Props) => {
+const Button = ({ variant, className, children, icon, ...props }: Props) => {
   return (
     <button
       className={classNames(
@@ -18,6 +19,7 @@ const Button = ({ variant, className, children, icon }: Props) => {
         icon ? 'flex items-center justify-center gap-2' : '',
         className ?? 'px-5 py-2.5'
       )}
+      {...props}
     >
       <span>{children}</span>
       {icon && <ChevronRight className="w-5 h-5" />}

@@ -19,7 +19,14 @@ const HeroBanner = () => {
               from anywhere in the world.
             </p>
             <div className="flex justify-center space-x-1 max-sm:flex-col">
-              <Button icon> Browse Products</Button>
+              <Button
+                icon
+                onClick={() =>
+                  window.open('https://shop.obana.africa/', '_blank')
+                }
+              >
+                Browse Products
+              </Button>
               <Button variant="ghost"> Get Started Now</Button>
             </div>
             <div className="max-sm:hidden flex items-center gap-3 justify-center mt-8 text-obGray-800">
