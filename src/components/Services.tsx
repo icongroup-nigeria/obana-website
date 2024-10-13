@@ -12,22 +12,6 @@ const Services = () => {
           className="max-w-[738px] text-center mx-auto"
         />
         <ServicesSlider />
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[1, 2, 3, 4].map((item) => (
-            <div key={item} className="bg-gray-100 p-6 rounded-lg">
-              <div className="bg-gray-300 h-48 mb-4 rounded flex items-center justify-center">
-                <span className="text-gray-600">Image</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">
-                Medium length section heading goes here
-              </h3>
-              <p className="text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse varius enim in eros elementum tristique.
-              </p>
-            </div>
-          ))}
-        </div> */}
       </div>
     </section>
   );

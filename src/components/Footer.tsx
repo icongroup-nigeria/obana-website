@@ -2,7 +2,6 @@ import { scrollToTop } from '@/Utils/functions';
 import footerBg from '@/assets/footer-bg.png';
 import Image from 'next/image';
 import logo from '@/assets/logo.png';
-import Headding from './Headding';
 
 const Footer = () => {
   return (
@@ -11,21 +10,10 @@ const Footer = () => {
       style={{ backgroundImage: `url(${footerBg.src})` }}
     >
       <div className="container mx-auto px-4">
-        {/* Newsletter Section */}
-        <section className="mb-12 md:flex justify-between gap-2">
-          <Headding
-            light
-            headerText="Simplify Your Sourcing Process with Us"
-            subText="Whether you're looking to buy goods from Nigeria, source from international suppliers, or need financial support to make purchases, we’ve got you covered:"
-            className="max-w-[60.375rem] mx-auto text-center"
-            headTextClass="lg:text-[44px]"
-          />
-        </section>
-
         {/* Main Footer Content */}
-        <div className="flex flex-wrap -mx-4 pt-8 border-t border-white/[12%]">
+        <div className="flex flex-wrap -mx-4 pt-8">
           {/* Logo */}
-          <div className="max-md:hidden w-full md:w-1/6 px-4 mb-8 md:mb-0">
+          <div className="w-full md:w-1/6 px-4 mb-8 md:mb-0">
             <div
               className="h-[2.4375rem] overflow-hidden cursor-pointer"
               onClick={scrollToTop}
@@ -47,6 +35,7 @@ const Footer = () => {
                   <li key={linkIndex} className="mb-2">
                     <a
                       href={link.url}
+                      target={link.target}
                       className="text-obGray-300 hover:text-obGray-400"
                     >
                       {link.label}
@@ -123,34 +112,46 @@ const Footer = () => {
 export default Footer;
 const footerLinnks = [
   {
-    title: 'For Businesses',
+    title: 'Our Services',
     links: [
-      { label: 'Acquisition Campaign', url: '#' },
-      { label: 'Awareness Campaign', url: '#' },
-      { label: 'PM', url: '#' },
-      { label: 'Online Mall', url: '#' },
+      {
+        label: 'Order Products',
+        url: 'https://shop.obana.africa/',
+        target: '_blank',
+      },
+      { label: 'Logistics Support', url: '#' },
+      { label: 'Embedded Financing', url: '#' },
+      { label: 'Sign up as a Vendor', url: '#' },
+      {
+        label: 'Join our Sales Team',
+        url: 'https://forms.gle/2pyQZ4tM5fPNYWbK6',
+        target: '_blank',
+      },
     ],
   },
   {
-    title: 'For Influencers',
+    title: 'Company',
     links: [
-      { label: 'Earn on Obana', url: '#' },
-      { label: 'Join PIM Program', url: '#' },
+      { label: 'About Us', url: '#' },
+      { label: 'Careers', url: '#' },
+      { label: 'Newsletter', url: '#' },
+      { label: 'Blog', url: '#' },
+      { label: 'Integrations', url: '#' },
     ],
   },
   {
     title: 'Support',
     links: [
-      { label: 'FAQ', url: '#' },
+      { label: 'FAQs', url: '#' },
       { label: 'Contact Us', url: '#' },
     ],
   },
   {
-    title: 'Privacy',
+    title: 'Legal',
     links: [
       { label: 'Privacy Policy', url: '#' },
-      { label: 'Influencer T&Cs', url: '#' },
-      { label: 'Business T&Cs', url: '#' },
+      { label: 'Cookies Policy', url: '#' },
+      { label: 'Terms & Conditions', url: '#' },
     ],
   },
 ];

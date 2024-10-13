@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import Button from './Button';
-import imgBanner from '@/assets/banner.png';
 import avatarGroup from '@/assets/avatar-group.png';
 
 const HeroBanner = () => {
   return (
     <>
-      <section className="pt-10 sm:pt-20 mb-10 sm:mb-20 bg-obGray-100 w-[95%] md:w-[97%] mx-auto rounded-lg">
+      <section className="py-10 sm:py-20 mb-10 sm:mb-20 bg-obGray-100 w-[95%] md:w-[97%] mx-auto rounded-lg">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-main-blue">
@@ -35,7 +34,7 @@ const HeroBanner = () => {
             </div>
           </div>
         </div>
-        <div className="container mx-auto px-4 pt-10 md:pt-20">
+        {/* <div className="container mx-auto px-4 pt-10 md:pt-20">
           <div className="bg-gray-300  h-auto max-h-[11.25rem] sm:max-h-[39.375rem] w-max max-w-full mx-auto rounded-lg flex items-center justify-center overflow-hidden">
             <Image
               src={imgBanner}
@@ -43,7 +42,7 @@ const HeroBanner = () => {
               className="h-full object-contain"
             />
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );

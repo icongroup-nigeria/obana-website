@@ -84,7 +84,7 @@ const NavBar = () => {
               className="text-obGray-700 hover:text-primary flex flex-col justify-center min-h-[3.1875rem]"
             >
               <span className="flex items-center">
-                <span>Our Service</span>
+                <span>About Us</span>
                 <ChevronDown className="inline-block ml-1" size={16} />
               </span>
 
@@ -93,14 +93,6 @@ const NavBar = () => {
               )}
             </button>
 
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-obGray-700 hover:text-primary flex items-center min-h-[3.1875rem]"
-            >
-              Blog
-            </a>
             <a
               href="https://forms.gle/2pyQZ4tM5fPNYWbK6"
               target="_blank"
@@ -119,8 +111,9 @@ const NavBar = () => {
             </a>
           </div>
           <div className="max-md:flex-col flex md:items-center gap-2.5 md:gap-x-4">
-            <Button variant="ghost">Join</Button>
-
+            <Button variant="ghost">Sign Up</Button>
+            <span>|</span>
+            <Button variant="ghost">Login</Button>
             <Button
               icon
               onClick={() =>
@@ -150,7 +143,7 @@ const MegaMenu = ({
       onMouseEnter={() => (width > 700 ? setIsMegaMenuOpen(true) : null)}
       onMouseLeave={() => (width > 700 ? setIsMegaMenuOpen(false) : null)}
     >
-      <div className="flex justify-between gap-6">
+      <div className="flex justify-between gap-6 max-lg:flex-col">
         {/* Left Column - Our Services */}
         <div className="flex-1  py-5 px-4 pl-8">
           <h2 className="text-main-blue font-bold mb-4 text-left">
@@ -193,7 +186,7 @@ const MegaMenu = ({
         </div>
 
         {/* Right Column - Featured Section */}
-        <div className="flex-1 max-w-[560px] flex flex-col items-center space-y-4 bg-gray-100  py-5 px-4">
+        <div className="flex-1 lg:max-w-[560px] flex flex-col items-center space-y-4 bg-gray-100  py-5 px-4">
           {/* Blog Section */}
           <div className="w-full">
             <h2 className="text-main-blue font-bold mb-4 text-left">
