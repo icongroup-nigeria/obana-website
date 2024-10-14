@@ -39,9 +39,9 @@ const NavBar = () => {
 
   return (
     <nav className="bg-white sticky top-0 z-50">
-      <div className="mx-auto px-4 py-4 flex gap-6 items-center max-md:flex-col">
+      <div className="mx-auto px-4 py-4 flex gap-6 items-center max-lg:flex-col">
         <div
-          className="text-xl font-bold xl:h-12 overflow-hidden flex items-center justify-between max-md:w-full"
+          className="text-xl font-bold xl:h-12 overflow-hidden flex items-center justify-between max-lg:w-full"
           onClick={scrollToTop}
         >
           <Image
@@ -49,7 +49,7 @@ const NavBar = () => {
             alt="Obana.Africa"
             className="object-cover h-full"
           />
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-main-blue hover:text-obGray-800 hover:bg-gray-100 focus:outline-none"
@@ -60,26 +60,26 @@ const NavBar = () => {
         </div>
         <div
           className={classNames(
-            isMenuOpen ? 'flex flex-col' : 'hidden md:flex ',
-            'justify-between md:items-center flex-1 w-full md:text-sm lg:text-base gap-6'
+            isMenuOpen ? 'flex flex-col lg:flex-row' : 'hidden lg:flex',
+            'justify-between lg:items-center flex-1 w-full lg:text-sm xl:text-base gap-6'
           )}
         >
-          <div className="max-md:flex-col flex md:items-center md:space-x-4 xl:space-x-8 ">
+          <div className="max-lg:flex-col flex lg:items-center lg:space-x-4 xl:space-x-8 ">
             <button
               onClick={scrollToTop}
-              className="text-obGray-700 hover:text-primary max-md:text-left min-h-[3.1875rem]"
+              className="text-obGray-700 hover:text-primary max-lg:text-left min-h-[3.1875rem]"
             >
               Home
             </button>
             <button
               onClick={() =>
-                width > 700 ? scrollToSection('services') : toggleMegaMenu()
+                width >= 1024 ? scrollToSection('services') : toggleMegaMenu()
               }
               onMouseEnter={() =>
-                width > 700 ? setIsMegaMenuOpen(true) : null
+                width >= 1024 ? setIsMegaMenuOpen(true) : null
               }
               onMouseLeave={() =>
-                width > 700 ? setIsMegaMenuOpen(false) : null
+                width >= 1024 ? setIsMegaMenuOpen(false) : null
               }
               className="text-obGray-700 hover:text-primary flex flex-col justify-center min-h-[3.1875rem]"
             >
@@ -110,9 +110,10 @@ const NavBar = () => {
               Vendor Signup
             </a>
           </div>
-          <div className="max-md:flex-col flex md:items-center gap-2.5 md:gap-x-4">
+          <div className="max-lg:flex-col flex lg:items-center gap-2.5 lg:gap-x-4">
             <Button variant="ghost">Sign Up</Button>
-            <span>|</span>
+            <span className="lg:hidden border-t"></span>
+            <span className="max-lg:hidden">|</span>
             <Button variant="ghost">Login</Button>
             <Button
               icon
@@ -139,9 +140,9 @@ const MegaMenu = ({
   const { width } = useWindowSize();
   return (
     <div
-      className="md:fixed md:left-0 md:top-[3.25rem]  md:w-screen bg-white md:shadow-lg text-base"
-      onMouseEnter={() => (width > 700 ? setIsMegaMenuOpen(true) : null)}
-      onMouseLeave={() => (width > 700 ? setIsMegaMenuOpen(false) : null)}
+      className="lg:fixed lg:left-0 lg:top-[3.25rem]  lg:w-screen bg-white lg:shadow-lg text-base"
+      onMouseEnter={() => (width >= 1024 ? setIsMegaMenuOpen(true) : null)}
+      onMouseLeave={() => (width >= 1024 ? setIsMegaMenuOpen(false) : null)}
     >
       <div className="flex justify-between gap-6 max-lg:flex-col">
         {/* Left Column - Our Services */}
@@ -172,7 +173,6 @@ const MegaMenu = ({
             {/* Image Section */}
             <div
               className={classNames(
-                width > 1200 ? 'block' : 'hidden',
                 'bg-[#EEEEEE] rounded-xl flex-1 max-w-[334.88px] max-h-[340px] m-auto  p-2.5'
               )}
             >
@@ -182,42 +182,6 @@ const MegaMenu = ({
                 className="h-full w-auto  object-fill rounded-lg shadow-md"
               />
             </div>
-          </div>
-        </div>
-
-        {/* Right Column - Featured Section */}
-        <div className="flex-1 lg:max-w-[560px] flex flex-col items-center space-y-4 bg-gray-100  py-5 px-4">
-          {/* Blog Section */}
-          <div className="w-full">
-            <h2 className="text-main-blue font-bold mb-4 text-left">
-              Featured from Blog
-            </h2>
-
-            <div className="space-y-4">
-              {/* Blog Post */}
-              {[1, 2].map((item) => (
-                <div
-                  key={item}
-                  className="text-main-blue flex items-center gap-2 lg:gap-6"
-                >
-                  <div className="h-[105px] w-full max-w-[160px] bg-main-blue"></div>
-                  <div className="text-left space-y-2">
-                    <h3 className="font-semibold text-base">Article Title</h3>
-                    <p className="max-w-[200px] text-sm">
-                      Lorem ipsum dolor sit amet consectetur elit
-                    </p>
-                    <a href="#" className="underline text-sm">
-                      Read more
-                    </a>
-                  </div>
-                </div>
-              ))}
-
-              {/* Blog Post */}
-            </div>
-          </div>
-          <div className="ml-0 w-full flex justify-start">
-            <Button variant="ghost">Get Started</Button>
           </div>
         </div>
       </div>

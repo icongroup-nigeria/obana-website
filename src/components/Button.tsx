@@ -14,7 +14,9 @@ const Button = ({ variant, className, children, icon, ...props }: Props) => {
   return (
     <button
       className={classNames(
-        variant === 'ghost' ? ' text-obGray-700' : 'bg-primary text-white',
+        variant === 'ghost'
+          ? ' text-obGray-700 hover:underline'
+          : 'bg-primary text-white',
         'px-5 py-2.5 hover:opacity-75 rounded-xl',
         icon ? 'flex items-center justify-center gap-2' : '',
         className ?? 'px-5 py-2.5'
